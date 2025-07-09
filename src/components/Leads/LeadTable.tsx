@@ -65,9 +65,7 @@ const LeadTable: React.FC<LeadTableProps> = ({ leads, onViewLead, onEmailLead, o
       <div className="p-6 border-b border-gray-200">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-semibold text-gray-900">All Leads</h2>
-          <button className="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors">
-            Add Lead
-          </button>
+         
         </div>
         
         {/* Filters */}
