@@ -4,9 +4,6 @@ import { Lead } from '../types';
 export class LeadService {
 
 
-
-
-  
   // Récupérer tous les leads avec filtres
   static async getLeads(filters?: {
     search?: string;
