@@ -2,14 +2,21 @@ export interface Lead {
   id: string;
   name: string;
   email: string;
-  title: string;
-  company: string;
+  title?: string;
+  company?: string;
   source: string;
   score: number;
   status: 'hot' | 'warm' | 'cold';
-  date_added: string;
+  phone?: string;
+  linkedin_url?: string;
+  website?: string;
+  industry?: string;
+  company_size?: string;
+  location?: string;
+  notes?: string;
   created_at: string;
   updated_at: string;
+  date_added?: string;
 }
 
 export interface EmailCampaign {

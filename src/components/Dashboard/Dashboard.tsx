@@ -55,21 +55,29 @@ const Dashboard: React.FC = () => {
       });
       
       // Convertir les sources en format graphique
+     // Exemple : LeadSource[]
       const sourceColors: Record<string, string> = {
-        'linkedin': '#0077B5',
-        'company_websites': '#F59E0B',
-        'directories': '#DC2626',
-        'social_media': '#6B7280',
-        'referrals': '#059669',
-        'cold_outreach': '#7C3AED',
-        'Manual': '#8B5CF6'
+        linkedin: '#1b04ebff',
+        company_websites: '#ffee00ff',
+        directories: '#DC2626',
+        social_media: '#6B7280',
+        referrals: '#059669',
+        cold_outreach: '#2b0966ff',
+        manual: '#8B5CF6',
       };
       
-      const sources = Object.entries(leadStats.sourceStats).map(([name, value]) => ({
-        name: name.replace('_', ' ').replace(/\b\w/g, l => l.toUpperCase()),
+        
+
+
+      const sources = Object.entries(leadStats.sourceStats).map(([key, value]) => {
+      const cleanKey = key.toLowerCase(); // Assure la correspondance avec sourceColors
+      return {
+        name: key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()), // Pour l'affichage
         value,
-        color: sourceColors[name] || '#6B7280'
-      }));
+        color: sourceColors[cleanKey] || '#d0ff00ff', // Pour la couleur
+      };
+    });
+
       
       setLeadSources(sources);
       
